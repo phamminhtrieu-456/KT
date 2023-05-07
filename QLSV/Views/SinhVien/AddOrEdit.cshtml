@@ -1,0 +1,67 @@
+﻿@model SinhVienViewModel
+
+@{
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <p class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">@ViewBag.RenderedHtmlTitle</p>
+            <form asp-action="AddOrEdit" asp-controller="SinhVien" asp-route-id="@Model.MaSV">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="MaSV" value="@Model.MaSV" />
+                <div>
+                    <div class="form-group mb-2">
+                        <label asp-for="HoTen" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="HoTen" class="form-control" placeholder="Nhập họ và tên" value="@Model.HoTen" />
+                        </div>
+                        <span asp-validation-for="HoTen" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="Lop" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="Lop" class="form-control" placeholder="Nhập lớp" value="@Model.Lop" />
+                        </div>
+                        <span asp-validation-for="Lop" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="Tuoi" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="Tuoi" class="form-control" placeholder="Nhập tuổi" value="@Model.Tuoi" />
+                        </div>
+                        <span asp-validation-for="Tuoi" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="DiaChi" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <textarea asp-for="DiaChi" class="form-control" placeholder="Nhập nội dung địa chỉ" rows="3" value="@Model.DiaChi">
+                             </textarea>
+                        </div>
+                        <span asp-validation-for="DiaChi" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group">
+                        <br />
+                        <div class="col-md-12 offset-md-5">
+                            <div class="d-flex">
+                                <div style="margin-right:10px;">
+                                    <input type="submit" value="Submit" class="btn btn-primary btn-block" style="width:80px" />
+                                </div>
+                                <div>
+                                    <a asp-controller="SinhVien" asp-action="Index" class="btn btn-success text-white"><i class="fe-log-out"></i> Close</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> <!-- end card-->
+</div>
+
+@section scripts{
+}
